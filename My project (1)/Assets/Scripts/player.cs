@@ -10,7 +10,7 @@ using UnityEngine;
         [SerializeField , Tooltip("¶]³t"),Range(0,20)    ]
         private float speed = 3.5f;
         [SerializeField]
-        private float JH = 350;
+        //private float JH = 350;
         private Rigidbody2D rig;
         private Animator ani;
 
