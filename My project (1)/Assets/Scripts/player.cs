@@ -13,9 +13,13 @@ using UnityEngine;
         //private float JH = 350;
         private Rigidbody2D rig;
         private Animator ani;
-
+        bool clickR;
         #endregion
         #region 運行
+        private void FixedUpdate()
+        {
+        
+        }
         private void Awake()
         {
             ani = GetComponent<Animator>();
@@ -23,8 +27,19 @@ using UnityEngine;
         }
         void RusS()
         {
-            rig.velocity = new Vector2(speed,rig.velocity.y);
+            if (Input.GetKeyDown(KeyCode.RightArrow ))
+            {
+
+                rig.velocity = new Vector2(speed, rig.velocity.y);
+            }
+            else if (Input.GetKeyDown(KeyCode.LeftArrow))
+            {
+                rig.velocity = new Vector2(-speed, rig.velocity.y);
+            }
+         
+         
         }
+       
         private void Start()
         {
 
@@ -38,9 +53,13 @@ using UnityEngine;
         #endregion
         #region 資料
         #endregion
-
+        private void OnDisable()
+        {
+            rig.velocity = Vector3.zero;
+        }
 
     }
+    
 
 }
 
